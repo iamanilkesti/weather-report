@@ -1,5 +1,5 @@
 weatherreport:
   config:
-    fetchWeatherInfoByCityNameURL: "http://api.openweathermap.org/data/2.5/weather?q={city}&appId=61e4459fe92bdddd2674e55b9d34b59e"
-    fetchWeatherInfoByLatLonURL: "http://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appId=61e4459fe92bdddd2674e55b9d34b59e"
-    appId: "61e4459fe92bdddd2674e55b9d34b59e"
+    fetchWeatherInfoByCityNameURL: "http://api.openweathermap.org/data/2.5/weather?q={city}&appId="
+    fetchWeatherInfoByLatLonURL: "http://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appId="
+    appId: ""
