@@ -1,0 +1,24 @@
+# Simple deployment used to deploy and manage the app in nigelpoulton/getting-started-k8s:1.0
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: weather-deploy
+  labels:
+    app: web
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: weather
+  template:
+    metadata:
+      labels:
+        app: weather
+    spec: 
+      terminationGracePeriodSeconds: 1
+      containers:
+      - name: weather-pod
+        image: anilkesti/weather-report:1.0.0
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080

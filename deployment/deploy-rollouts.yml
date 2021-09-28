@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: weather-deploy
+  labels:
+    app: weather
+spec:
+  selector:
+    matchLabels:
+      app: weather
+  replicas: 5
+  minReadySeconds: 5
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: weather
+    spec: 
+      terminationGracePeriodSeconds: 1
+      containers:
+      - name: weather-pod
+        image: anilkesti/weather-report:2.0.0
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
